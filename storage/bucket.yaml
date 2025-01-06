@@ -1,0 +1,66 @@
+apiVersion: storage.gcp.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: gcp-provider-family-bucket-mf123
+spec:
+  forProvider:
+    location: US
+
+---
+apiVersion: storage.gcp.upbound.io/v1beta2
+kind: Bucket
+metadata:
+  annotations:
+    crossplane.io/external-create-pending: "2025-01-06T19:49:31Z"
+    crossplane.io/external-create-succeeded: "2025-01-06T19:49:31Z"
+    crossplane.io/external-name: gcp-provider-family-bucket-mf123
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"storage.gcp.upbound.io/v1beta1","kind":"Bucket","metadata":{"annotations":{},"name":"gcp-provider-family-bucket-mf123"},"spec":{"forProvider":{"location":"US"}}}
+  creationTimestamp: "2025-01-06T19:48:30Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 3
+  name: gcp-provider-family-bucket-mf123
+  resourceVersion: "2010549"
+  uid: aa19afd1-4731-4e6e-a9aa-f0db033d8725
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    location: US
+    project: axial-life-395119
+    publicAccessPrevention: inherited
+    rpo: DEFAULT
+    storageClass: STANDARD
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    defaultEventBasedHold: false
+    enableObjectRetention: false
+    forceDestroy: false
+    id: gcp-provider-family-bucket-mf123
+    location: US
+    project: axial-life-395119
+    publicAccessPrevention: inherited
+    requesterPays: false
+    rpo: DEFAULT
+    selfLink: https://www.googleapis.com/storage/v1/b/gcp-provider-family-bucket-mf123
+    storageClass: STANDARD
+    uniformBucketLevelAccess: false
+    url: gs://gcp-provider-family-bucket-mf123
+  conditions:
+  - lastTransitionTime: "2025-01-06T19:49:33Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-06T19:49:31Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-06T19:49:32Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation
