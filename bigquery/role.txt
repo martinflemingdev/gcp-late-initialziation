@@ -1,0 +1,31 @@
+At the dataset level, BigQuery only recognizes the roles READER, WRITER, and OWNER. You cannot assign more granular IAM roles (such as roles/bigquery.dataViewer or roles/bigquery.admin) directly in the dataset’s access.role field.
+
+Why only READER, WRITER, OWNER?
+BigQuery datasets specifically support those three “primitive” dataset-level roles:
+
+READER – Equivalent to “Can view data in the dataset.”
+WRITER – Equivalent to “Can modify or add data in the dataset.”
+OWNER – Full control of the dataset (including permissions).
+Although GCP IAM provides more granular roles like roles/bigquery.dataViewer or roles/bigquery.jobUser, those are not accepted by BigQuery’s dataset-level access.role property. Under the hood, Google BigQuery enforces these as the only permissible dataset roles.
+
+Referencing more granular IAM roles
+If you need more refined access control, you can instead:
+
+Grant your users or service accounts additional IAM roles at the project or resource level.
+Use Google IAM policy bindings on the broader GCP project or on individual tables/routines, rather than setting them in the dataset access list.
+In other words, you can still use fine-grained roles, but not by plugging them into access.role for the dataset resource. Instead, you would manage them via IAM bindings (for example, using a Crossplane IAMPolicyMember or GCP’s built-in IAM approach).
+
+Upbound’s Dataset spec reference
+When using Upbound’s Dataset manifest from bigquery.gcp.upbound.io/v1beta2, the spec.forProvider.access block expects:
+
+yaml
+Copy code
+spec:
+  forProvider:
+    access:
+      - role: READER | WRITER | OWNER
+        userByEmail: <optional>
+        ...
+and so on. Those are the only valid values for role in that block.
+
+Bottom line: For BigQuery dataset-level access, you are limited to READER, WRITER, and OWNER roles. If you need more nuanced permissions, configure them via IAM policies rather than through the dataset’s access block.

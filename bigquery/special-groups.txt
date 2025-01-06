@@ -1,0 +1,14 @@
+In a BigQuery dataset’s access block, specialGroup is used for referring to certain built-in groups that Google automatically manages. The recognized values for specialGroup in BigQuery are:
+
+projectOwners
+projectWriters
+projectReaders
+allAuthenticatedUsers
+allUsers
+These special groups map to GCP-defined groups rather than specific individual emails. For example:
+
+projectOwners: Anyone who is an Owner of the project where this dataset resides.
+projectWriters: Anyone who is a Writer (Editor) for the project.
+projectReaders: Anyone who is a Reader (Viewer) for the project.
+allAuthenticatedUsers: Any user or service account with a Google Account who is authenticated.
+allUsers: Any user on the internet (public access).

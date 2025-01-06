@@ -1,0 +1,105 @@
+apiVersion: bigquery.gcp.upbound.io/v1beta1
+kind: Dataset
+metadata:
+  name: testdataset
+spec:
+  forProvider:
+    location: US
+    # access:
+    # - role: OWNER
+    #   userByEmail: crossplane@axial-life-395119.iam.gserviceaccount.com
+    # - role: READER
+    #   userByEmail: martin.mf65@gmail.com
+---
+# apiVersion: bigquery.gcp.upbound.io/v1beta2
+# kind: Dataset
+# metadata:
+#   annotations:
+#     crossplane.io/external-create-pending: "2025-01-06T19:59:34Z"
+#     crossplane.io/external-create-succeeded: "2025-01-06T19:59:34Z"
+#     crossplane.io/external-name: testdataset
+#     kubectl.kubernetes.io/last-applied-configuration: |
+#       {"apiVersion":"bigquery.gcp.upbound.io/v1beta1","kind":"Dataset","metadata":{"annotations":{},"name":"testdataset"},"spec":{"forProvider":{"location":"US"}}}
+#   creationTimestamp: "2025-01-06T19:59:32Z"
+#   finalizers:
+#   - finalizer.managedresource.crossplane.io
+#   generation: 3
+#   name: testdataset
+#   resourceVersion: "2012090"
+#   uid: 26252153-32da-4570-8077-7c536e26ee7e
+# spec:
+#   deletionPolicy: Delete
+#   forProvider:
+#     access:
+#     - role: OWNER
+#       userByEmail: crossplane@axial-life-395119.iam.gserviceaccount.com
+#     - role: OWNER
+#       specialGroup: projectOwners
+#     - role: READER
+#       specialGroup: projectReaders
+#     - role: WRITER
+#       specialGroup: projectWriters
+#     location: US
+#     maxTimeTravelHours: "168"
+#     project: axial-life-395119
+#   initProvider: {}
+#   managementPolicies:
+#   - '*'
+#   providerConfigRef:
+#     name: default
+# status:
+  # atProvider:
+  #   access:
+  #   - domain: ""
+  #     groupByEmail: ""
+  #     iamMember: ""
+  #     role: OWNER
+  #     specialGroup: ""
+  #     userByEmail: crossplane@axial-life-395119.iam.gserviceaccount.com
+  #   - domain: ""
+  #     groupByEmail: ""
+  #     iamMember: ""
+  #     role: OWNER
+  #     specialGroup: projectOwners
+  #     userByEmail: ""
+  #   - domain: ""
+  #     groupByEmail: ""
+  #     iamMember: ""
+  #     role: READER
+  #     specialGroup: projectReaders
+  #     userByEmail: ""
+  #   - domain: ""
+  #     groupByEmail: ""
+  #     iamMember: ""
+  #     role: WRITER
+  #     specialGroup: projectWriters
+  #     userByEmail: ""
+  #   creationTime: 1736193574765
+  #   defaultCollation: ""
+  #   defaultPartitionExpirationMs: 0
+  #   defaultTableExpirationMs: 0
+  #   deleteContentsOnDestroy: false
+  #   description: ""
+  #   etag: p9XduyIEQ7zGJ5Ok6bEr2A==
+  #   friendlyName: ""
+  #   id: projects/axial-life-395119/datasets/testdataset
+  #   isCaseInsensitive: false
+  #   lastModifiedTime: 1736193574765
+  #   location: US
+  #   maxTimeTravelHours: "168"
+  #   project: axial-life-395119
+  #   selfLink: https://bigquery.googleapis.com/bigquery/v2/projects/axial-life-395119/datasets/testdataset
+  #   storageBillingModel: ""
+  # conditions:
+  # - lastTransitionTime: "2025-01-06T19:59:36Z"
+  #   reason: Available
+  #   status: "True"
+  #   type: Ready
+  # - lastTransitionTime: "2025-01-06T19:59:34Z"
+  #   reason: ReconcileSuccess
+  #   status: "True"
+  #   type: Synced
+  # - lastTransitionTime: "2025-01-06T19:59:35Z"
+  #   reason: Success
+  #   status: "True"
+  #   type: LastAsyncOperation
