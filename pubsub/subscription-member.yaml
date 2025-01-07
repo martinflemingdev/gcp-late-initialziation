@@ -1,0 +1,61 @@
+apiVersion: pubsub.gcp.upbound.io/v1beta1
+kind: SubscriptionIAMMember
+metadata:
+  name: subscription-iam-member
+spec:
+  forProvider:
+    member: allAuthenticatedUsers
+    role: roles/viewer
+    subscriptionRef:
+      name: subscription
+---
+apiVersion: pubsub.gcp.upbound.io/v1beta2
+kind: SubscriptionIAMMember
+metadata:
+  annotations:
+    crossplane.io/external-create-failed: "2025-01-07T20:57:23Z"
+    crossplane.io/external-create-pending: "2025-01-07T20:57:23Z"
+    crossplane.io/external-create-succeeded: "2025-01-07T20:53:17Z"
+    crossplane.io/external-name: projects/axial-life-395119/subscriptions/subscription/roles/viewer/allAuthenticatedUsers
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"pubsub.gcp.upbound.io/v1beta1","kind":"SubscriptionIAMMember","metadata":{"annotations":{},"name":"subscription-iam-member"},"spec":{"forProvider":{"member":"allAuthenticatedUsers","role":"roles/viewer","subscriptionRef":{"name":"subscription"}}}}
+  creationTimestamp: "2025-01-07T20:52:29Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 6
+  name: subscription-iam-member
+  resourceVersion: "2221128"
+  uid: c90bbf46-c512-4f84-9ef3-606a15396304
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    member: allAuthenticatedUsers
+    role: roles/viewer
+    subscription: subscription
+    subscriptionRef:
+      name: subscription
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    etag: BwYrI/3v64Y=
+    id: projects/axial-life-395119/subscriptions/subscription/roles/viewer/allAuthenticatedUsers
+    member: allAuthenticatedUsers
+    role: roles/viewer
+    subscription: subscription
+  conditions:
+  - lastTransitionTime: "2025-01-07T20:57:27Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-07T20:57:30Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-07T20:57:28Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation
