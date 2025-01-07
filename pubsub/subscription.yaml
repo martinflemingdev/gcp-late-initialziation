@@ -1,0 +1,72 @@
+apiVersion: pubsub.gcp.upbound.io/v1beta1
+kind: Subscription
+metadata:
+  name: subscription
+spec:
+  forProvider:
+    project: axial-life-395119
+    topicSelector:
+      matchLabels:
+        testing.upbound.io/example-name: topicplabel
+---
+apiVersion: pubsub.gcp.upbound.io/v1beta2
+kind: Subscription
+metadata:
+  annotations:
+    crossplane.io/external-create-pending: "2025-01-07T13:56:04Z"
+    crossplane.io/external-create-succeeded: "2025-01-07T13:56:04Z"
+    crossplane.io/external-name: subscription
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"pubsub.gcp.upbound.io/v1beta1","kind":"Subscription","metadata":{"annotations":{},"name":"subscription"},"spec":{"forProvider":{"project":"axial-life-395119","topicSelector":{"matchLabels":{"testing.upbound.io/example-name":"topicplabel"}}}}}
+  creationTimestamp: "2025-01-07T13:56:03Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 4
+  name: subscription
+  resourceVersion: "2162247"
+  uid: aa2423e9-2e8d-4e9f-9d1f-5ed0ae039ab5
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    ackDeadlineSeconds: 10
+    expirationPolicy:
+      ttl: 2678400s
+    messageRetentionDuration: 604800s
+    project: axial-life-395119
+    topic: topic
+    topicRef:
+      name: topic
+    topicSelector:
+      matchLabels:
+        testing.upbound.io/example-name: topicplabel
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    ackDeadlineSeconds: 10
+    enableExactlyOnceDelivery: false
+    enableMessageOrdering: false
+    expirationPolicy:
+      ttl: 2678400s
+    filter: ""
+    id: projects/axial-life-395119/subscriptions/subscription
+    messageRetentionDuration: 604800s
+    project: axial-life-395119
+    retainAckedMessages: false
+    topic: projects/axial-life-395119/topics/topic
+  conditions:
+  - lastTransitionTime: "2025-01-07T13:56:23Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-07T13:56:04Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-07T13:56:21Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation

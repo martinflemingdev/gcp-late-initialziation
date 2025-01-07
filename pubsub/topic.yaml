@@ -1,0 +1,54 @@
+apiVersion: pubsub.gcp.upbound.io/v1beta1
+kind: Topic
+metadata:
+  name: topic
+  labels:
+    testing.upbound.io/example-name: topicplabel
+spec:
+  forProvider:
+    project: axial-life-395119
+---
+apiVersion: pubsub.gcp.upbound.io/v1beta2
+kind: Topic
+metadata:
+  annotations:
+    crossplane.io/external-name: topic
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"pubsub.gcp.upbound.io/v1beta1","kind":"Topic","metadata":{"annotations":{},"labels":{"testing.upbound.io/example-name":"topicplabel"},"name":"topic"},"spec":{"forProvider":{"project":"axial-life-395119"}}}
+  creationTimestamp: "2025-01-07T13:55:06Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 2
+  labels:
+    testing.upbound.io/example-name: topicplabel
+  name: topic
+  resourceVersion: "2162063"
+  uid: 4b0fad81-d730-44cc-befb-6ad847436eef
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    project: axial-life-395119
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    id: projects/axial-life-395119/topics/topic
+    kmsKeyName: ""
+    messageRetentionDuration: ""
+    project: axial-life-395119
+  conditions:
+  - lastTransitionTime: "2025-01-07T13:55:08Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-07T13:55:09Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-07T13:55:09Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation
