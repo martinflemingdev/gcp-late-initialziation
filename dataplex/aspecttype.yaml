@@ -1,0 +1,112 @@
+apiVersion: dataplex.gcp.upbound.io/v1beta1
+kind: AspectType
+metadata:
+  name: test-aspect-type-basic
+spec:
+  forProvider:
+    project: axial-life-395119
+    location: us-central1
+    metadataTemplate: >
+      {
+        "name": "tf-test-template",
+        "type": "record",
+        "recordFields": [
+          {
+            "name": "type",
+            "type": "enum",
+            "annotations": {
+              "displayName": "Type",
+              "description": "Specifies the type of view represented by the entry."
+            },
+            "index": 1,
+            "constraints": {
+              "required": true
+            },
+            "enumValues": [
+              {
+                "name": "VIEW",
+                "index": 1
+              }
+            ]
+          }
+        ]
+      }
+---
+apiVersion: dataplex.gcp.upbound.io/v1beta1
+kind: AspectType
+metadata:
+  annotations:
+    crossplane.io/external-create-pending: "2025-01-07T14:35:12Z"
+    crossplane.io/external-create-succeeded: "2025-01-07T14:35:12Z"
+    crossplane.io/external-name: test-aspect-type-basic
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"dataplex.gcp.upbound.io/v1beta1","kind":"AspectType","metadata":{"annotations":{},"name":"test-aspect-type-basic"},"spec":{"forProvider":{"location":"us-central1","metadataTemplate":"{\n  \"name\": \"tf-test-template\",\n  \"type\": \"record\",\n  \"recordFields\": [\n    {\n      \"name\": \"type\",\n      \"type\": \"enum\",\n      \"annotations\": {\n        \"displayName\": \"Type\",\n        \"description\": \"Specifies the type of view represented by the entry.\"\n      },\n      \"index\": 1,\n      \"constraints\": {\n        \"required\": true\n      },\n      \"enumValues\": [\n        {\n          \"name\": \"VIEW\",\n          \"index\": 1\n        }\n      ]\n    }\n  ]\n}\n","project":"axial-life-395119"}}}
+  creationTimestamp: "2025-01-07T14:35:11Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 2
+  name: test-aspect-type-basic
+  resourceVersion: "2168027"
+  uid: 8243d2bf-a2ab-4ab3-bf61-5ba27361eae5
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    location: us-central1
+    metadataTemplate: |
+      {
+        "name": "tf-test-template",
+        "type": "record",
+        "recordFields": [
+          {
+            "name": "type",
+            "type": "enum",
+            "annotations": {
+              "displayName": "Type",
+              "description": "Specifies the type of view represented by the entry."
+            },
+            "index": 1,
+            "constraints": {
+              "required": true
+            },
+            "enumValues": [
+              {
+                "name": "VIEW",
+                "index": 1
+              }
+            ]
+          }
+        ]
+      }
+    project: axial-life-395119
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    createTime: "2025-01-07T14:35:14.309472129Z"
+    description: ""
+    displayName: ""
+    id: projects/axial-life-395119/locations/us-central1/aspectTypes/test-aspect-type-basic
+    location: us-central1
+    metadataTemplate: '{"name":"tf-test-template","recordFields":[{"annotations":{"description":"Specifies
+      the type of view represented by the entry.","displayName":"Type"},"constraints":{"required":true},"enumValues":[{"index":1,"name":"VIEW"}],"index":1,"name":"type","type":"enum"}],"type":"record"}'
+    name: projects/axial-life-395119/locations/us-central1/aspectTypes/test-aspect-type-basic
+    project: axial-life-395119
+    transferStatus: ""
+    uid: c5d4b9ee-ee16-4814-b296-8b02cae616ea
+    updateTime: "2025-01-07T14:35:15.705478308Z"
+  conditions:
+  - lastTransitionTime: "2025-01-07T14:35:27Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-07T14:35:12Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-07T14:35:25Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation
