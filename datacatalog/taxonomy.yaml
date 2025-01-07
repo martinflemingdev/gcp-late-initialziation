@@ -1,0 +1,64 @@
+apiVersion: datacatalog.gcp.upbound.io/v1beta1
+kind: Taxonomy
+metadata:
+  labels:
+    testing.upbound.io/example-name: my_taxonomy
+  name: basic-taxonomy
+spec:
+  forProvider:
+    project: axial-life-395119
+    # activatedPolicyTypes:
+    #   - FINE_GRAINED_ACCESS_CONTROL
+    # description: A collection of policy tags
+    displayName: my_taxonomy # required
+    region: eu # required
+---
+# apiVersion: datacatalog.gcp.upbound.io/v1beta1
+# kind: Taxonomy
+# metadata:
+#   annotations:
+#     crossplane.io/external-create-failed: "2025-01-07T14:23:31Z"
+#     crossplane.io/external-create-pending: "2025-01-07T14:23:30Z"
+#     crossplane.io/external-create-succeeded: "2025-01-07T14:22:04Z"
+#     crossplane.io/external-name: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341
+#     kubectl.kubernetes.io/last-applied-configuration: |
+#       {"apiVersion":"datacatalog.gcp.upbound.io/v1beta1","kind":"Taxonomy","metadata":{"annotations":{},"name":"basic-taxonomy"},"spec":{"forProvider":{"displayName":"my_taxonomy","project":"axial-life-395119","region":"eu"}}}
+#   creationTimestamp: "2025-01-07T14:22:03Z"
+#   finalizers:
+#   - finalizer.managedresource.crossplane.io
+#   generation: 3
+#   name: basic-taxonomy
+#   resourceVersion: "2166081"
+#   uid: c63b944c-74ca-4319-94c7-8be58ef056b5
+# spec:
+#   deletionPolicy: Delete
+#   forProvider:
+#     displayName: my_taxonomy
+#     project: axial-life-395119
+#     region: eu
+#   initProvider: {}
+#   managementPolicies:
+#   - '*'
+#   providerConfigRef:
+#     name: default
+# status:
+#   atProvider:
+#     description: ""
+#     displayName: my_taxonomy
+#     id: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341
+#     name: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341
+#     project: axial-life-395119
+#     region: eu
+#   conditions:
+#   - lastTransitionTime: "2025-01-07T14:23:34Z"
+#     reason: Available
+#     status: "True"
+#     type: Ready
+#   - lastTransitionTime: "2025-01-07T14:23:32Z"
+#     reason: ReconcileSuccess
+#     status: "True"
+#     type: Synced
+#   - lastTransitionTime: "2025-01-07T14:23:32Z"
+#     reason: Success
+#     status: "True"
+#     type: LastAsyncOperation

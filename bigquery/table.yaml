@@ -1,0 +1,87 @@
+apiVersion: bigquery.gcp.upbound.io/v1beta1
+kind: Table
+metadata:
+  name: testtable
+spec:
+  forProvider:
+    datasetIdRef: 
+      name: testdatasetmf
+    # schema: |
+    #   [
+    #     {
+    #       "name": "permalink",
+    #       "type": "STRING",
+    #       "mode": "NULLABLE",
+    #       "description": "The Permalink"
+    #     },
+    #     {
+    #       "name": "state",
+    #       "type": "STRING",
+    #       "mode": "NULLABLE",
+    #       "description": "State where the head office is located"
+    #     }
+    #   ]
+---
+apiVersion: bigquery.gcp.upbound.io/v1beta2
+kind: Table
+metadata:
+  annotations:
+    crossplane.io/external-create-pending: "2025-01-07T14:04:48Z"
+    crossplane.io/external-create-succeeded: "2025-01-07T14:04:49Z"
+    crossplane.io/external-name: testtable
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"bigquery.gcp.upbound.io/v1beta1","kind":"Table","metadata":{"annotations":{},"name":"testtable"},"spec":{"forProvider":{"datasetIdRef":{"name":"testdatasetmf"}}}}
+  creationTimestamp: "2025-01-07T14:04:48Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 4
+  name: testtable
+  resourceVersion: "2163436"
+  uid: 0e662aa5-af13-4157-b063-9bd4ebf911da
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    datasetId: testdatasetmf
+    datasetIdRef:
+      name: testdatasetmf
+    deletionProtection: true
+    project: axial-life-395119
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    allowResourceTagsOnDeletion: false
+    creationTime: 1736258689072
+    datasetId: testdatasetmf
+    deletionProtection: true
+    description: ""
+    etag: ApCmIJ/oWL5qEQS9gSKYvw==
+    expirationTime: 0
+    friendlyName: ""
+    id: projects/axial-life-395119/datasets/testdatasetmf/tables/testtable
+    lastModifiedTime: 1736258689116
+    location: US
+    maxStaleness: ""
+    numBytes: 0
+    numLongTermBytes: 0
+    numRows: 0
+    project: axial-life-395119
+    requirePartitionFilter: false
+    selfLink: https://bigquery.googleapis.com/bigquery/v2/projects/axial-life-395119/datasets/testdatasetmf/tables/testtable
+    type: TABLE
+  conditions:
+  - lastTransitionTime: "2025-01-07T14:04:51Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-07T14:04:49Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-07T14:04:49Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation

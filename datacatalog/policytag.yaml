@@ -1,0 +1,64 @@
+apiVersion: datacatalog.gcp.upbound.io/v1beta1
+kind: PolicyTag
+metadata:
+  name: basic-policy-tag
+spec:
+  forProvider:
+    # description: A policy tag normally associated with low security items
+    displayName: Low security # required
+    taxonomySelector:
+      matchLabels:
+        testing.upbound.io/example-name: my_taxonomy
+---
+apiVersion: datacatalog.gcp.upbound.io/v1beta1
+kind: PolicyTag
+metadata:
+  annotations:
+    crossplane.io/external-create-pending: "2025-01-07T14:26:32Z"
+    crossplane.io/external-create-succeeded: "2025-01-07T14:26:32Z"
+    crossplane.io/external-name: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341/policyTags/6007583015303862525
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"datacatalog.gcp.upbound.io/v1beta1","kind":"PolicyTag","metadata":{"annotations":{},"name":"basic-policy-tag"},"spec":{"forProvider":{"displayName":"Low security","taxonomySelector":{"matchLabels":{"testing.upbound.io/example-name":"my_taxonomy"}}}}}
+  creationTimestamp: "2025-01-07T14:26:31Z"
+  finalizers:
+  - finalizer.managedresource.crossplane.io
+  generation: 3
+  name: basic-policy-tag
+  resourceVersion: "2166511"
+  uid: 95a456c2-013c-42b3-b324-84fb561a52ad
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    displayName: Low security
+    taxonomy: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341
+    taxonomyRef:
+      name: basic-taxonomy
+    taxonomySelector:
+      matchLabels:
+        testing.upbound.io/example-name: my_taxonomy
+  initProvider: {}
+  managementPolicies:
+  - '*'
+  providerConfigRef:
+    name: default
+status:
+  atProvider:
+    description: ""
+    displayName: Low security
+    id: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341/policyTags/6007583015303862525
+    name: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341/policyTags/6007583015303862525
+    parentPolicyTag: ""
+    taxonomy: projects/axial-life-395119/locations/eu/taxonomies/7943355266724842341
+  conditions:
+  - lastTransitionTime: "2025-01-07T14:26:35Z"
+    reason: Available
+    status: "True"
+    type: Ready
+  - lastTransitionTime: "2025-01-07T14:26:32Z"
+    reason: ReconcileSuccess
+    status: "True"
+    type: Synced
+  - lastTransitionTime: "2025-01-07T14:26:33Z"
+    reason: Success
+    status: "True"
+    type: LastAsyncOperation
